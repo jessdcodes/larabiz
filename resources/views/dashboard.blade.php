@@ -13,8 +13,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <h3>Your Listings</h3>
+                    @if(count($listings))
+                      <table class="table table-striped">
+                        <tr>
+                          <th>Company</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </table>
+                      @foreach($listings as $listing)
+                      <tr>
+                        <td>{{$listing->name}}</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      @endforeach
+                    @endif
                 </div>
             </div>
         </div>
